@@ -8,6 +8,7 @@ const clearBtn = document.querySelector(".clear-btn");
 resultBtn.addEventListener("click", showWinner);
 clearBtn.addEventListener("click", clearList);
 
+loadBtns();
 
 
 adayForm.addEventListener("submit", e => {
@@ -24,6 +25,8 @@ adayForm.addEventListener("submit", e => {
     const li = yeniAday();
     adayListesi.prepend(li);
     adayInput.value = "";
+    loadBtns();
+    
 });
 
 
@@ -34,7 +37,11 @@ function yeniAday(){
     const li = document.createElement("li");
     li.className = "aday";
     li.textContent = adayInput.value.trim();
+    const deleteIcon = document.createElement("i");
+    deleteIcon.className = "fa-solid fa-x deleteIcon";
+    deleteIcon.addEventListener("click", removeAday);
 
+    li.appendChild(deleteIcon);
 
     return li;
 }
@@ -59,7 +66,7 @@ function showWinner(e) {
 
     const kazananP = document.createElement("p");
     kazananP.className = "kazanan";
-    kazananP.textContent = `Kazanan ${kazanan}. Tebrikler!`;
+    kazananP.textContent = `'${kazanan}' Tebrikler!`;
 
     kazananContainer.innerHTML = "";
     kazananContainer.appendChild(kazananP);
@@ -71,8 +78,16 @@ function clearList(e) {
     e.preventDefault()
     adayListesi.innerHTML = "";
 }
+function loadBtns(){
+    const adaylar = document.querySelectorAll(".aday");
+    clearBtn.style.display = adaylar.length > 0 ? "inline-block": "none";
+    resultBtn.style.display = adaylar.length > 1 ? "inline-block": "none";
+}
 
 
 
-
+function removeAday(e){
+    e.target.closest("li").remove();
+    loadBtns();
+}
 

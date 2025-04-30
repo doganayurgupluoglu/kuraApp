@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kullanıcıların isim ekleyerek aralarından rastgele kura çekebileceği, dinamik ve etkileşimli bir JavaScript kura uygulaması. İleride görsel çark animasyonlarıyla geliştirilebilir." />
+    <meta name="description" content="Açık renk temalı, kullanıcıların isim ekleyerek rastgele kura çekebileceği dinamik JavaScript uygulaması.">
 
-
-    <!-- CSS -->
     <link rel="stylesheet" href="/src/css/style.css">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Google Fonts (Roboto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
-    <title>Kura Uygulamas</title>
+
+    <title>Kura Uygulaması - Açık Tema</title>
 </head>
 <body>
 
@@ -27,21 +24,21 @@
     <main>
         <div class="kura-container">
             <img class="kura-img" src="/src/img/Kura.png" alt="Kura Çek Logo resmi">
+            <h1>Kura çekme uygulaması</h1>
             <div class="input-output-container">
                 <form id="aday-form">
-                    <label for="aday-input" class="aday-label">İsimleri giriniz <br></label>
-                    <input type="text" id="aday-input" placeholder="İsimleri girdikten sonra enter'a basınız veya ekle bununa tıklayınız">
-                    <p class="alert">Boş bırakılamaz</p>
+                    <label for="aday-input" class="aday-label">Katılımcı İsimlerini Girin</label>
+                    <input type="text" id="aday-input" placeholder="İsim ekleyip Enter'a basın veya Ekle'ye tıklayın">
+                    <p class="alert">Lütfen bir isim giriniz.</p>
                     <button type="submit" class="add-btn">Ekle</button>
-                    <button class="result">Kurayı çek ve sonucu görüntüle !</button>
-                    <button class="clear-btn">Temizle ve yeniden başla</button>
+                    <button class="result">Kurayı Çek</button>
+                    <button class="clear-btn">Listeyi Temizle</button>
                 </form>
                 <ul class="aday-listesi">
-                </ul>
+                    </ul>
             </div>
             <div class="kazanan-container">
-                <!-- <p class="kazanan">Kazanan İsim Doğanay!</p> -->
-            </div>
+                </div>
         </div>
     </main>
     <script src="/src/js/app.js" defer></script>
