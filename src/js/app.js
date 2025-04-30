@@ -8,6 +8,8 @@ const clearBtn = document.querySelector(".clear-btn");
 resultBtn.addEventListener("click", showWinner);
 clearBtn.addEventListener("click", clearList);
 
+let currentWinner = null;
+
 loadBtns();
 counterAndRate();
 
@@ -24,7 +26,7 @@ adayForm.addEventListener("submit", e => {
         alertMessage.style.opacity = "0";
     }
     const li = yeniAday();
-    adayListesi.prepend(li);
+    adayListesi.appendChild(li);
     adayInput.value = "";
     loadBtns();
     counterAndRate();
@@ -55,25 +57,30 @@ function randomWinner() {
         alert("Hiçbir İsim girmediniz Lütfen isim giriniz!");
         return;
     }
-    return adaylar[index].textContent;
+    return adaylar[index];
 }
 
 function showWinner(e) {
     e.preventDefault();
     const kazananContainer = document.querySelector(".kazanan-container");
     const kazanan = randomWinner();
+    currentWinner = kazanan;
     if(!kazanan){
         return;
     }
 
     const kazananP = document.createElement("p");
     kazananP.className = "kazanan";
-    kazananP.textContent = `'${kazanan}' Tebrikler!`;
+    kazananP.textContent = `'${kazanan.textContent}' Tebrikler!`;
 
     kazananContainer.innerHTML = "";
     kazananContainer.appendChild(kazananP);
     kazananContainer.style.display = "flex";
+    const deleteWinnerBtn = document.createElement("button");
+    deleteWinnerBtn.innerText = "Kazananı listeden çıkar";
+    deleteWinnerBtn.addEventListener("click", deleteWinner)
 
+    kazananContainer.appendChild(deleteWinnerBtn);
 }
 
 function clearList(e) {
@@ -108,3 +115,11 @@ function counterAndRate(){
     }
 }
 
+function deleteWinner(){
+    if (currentWinner) {
+        currentWinner.remove();
+        currentWinner = null;
+        counterAndRate();
+        loadBtns();
+    }
+}
