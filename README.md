@@ -15,9 +15,9 @@ Bu dosya, Javascript pratiği için geliştirilen kura uygulamasının mevcut ve
 - [x] Listeden tek tek katılımcı silebilme.
 - [x] Farklı ekran boyutlarına uyumlu (responsive) tasarım.
 - [x] Açık renk tema.
+- [x] Kazananı listeden silme butonu.
 
 ## Gelecekte Eklenecek Özellikler
 
-- [ ] Kazananı listeden silme butonu.
 - [ ] Kura çekildiğinde kazanma sesi.
 - [ ] Kazanan için animasyonlar.
