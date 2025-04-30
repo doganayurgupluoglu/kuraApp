@@ -30,12 +30,20 @@
                     <label for="aday-input" class="aday-label">Katılımcı İsimlerini Girin</label>
                     <input type="text" id="aday-input" placeholder="İsim ekleyip Enter'a basın veya Ekle'ye tıklayın">
                     <p class="alert">Lütfen bir isim giriniz.</p>
-                    <button type="submit" class="add-btn">Ekle</button>
+                    <div class="clear-add-btns">
+                        <button type="submit" class="add-btn">Ekle</button>
+                        <button class="clear-btn">Listeyi Temizle</button>
+                    </div>
                     <button class="result">Kurayı Çek</button>
-                    <button class="clear-btn">Listeyi Temizle</button>
                 </form>
-                <ul class="aday-listesi">
+                <div class="aday-info-container">
+                    <div class="sayac-oran">
+                        <p class="sayac">Katılımcı Sayısı: 0</p>
+                        <p class="oran">Kazanma Şansı 100%</p>
+                    </div>
+                    <ul class="aday-listesi">
                     </ul>
+                </div>
             </div>
             <div class="kazanan-container">
                 </div>

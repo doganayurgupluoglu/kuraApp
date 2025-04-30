@@ -149,6 +149,7 @@ button {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: 600;
+    width: 100%;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -191,7 +192,13 @@ button:active {
     background-color: #c03b37; 
 }
 
-
+.clear-add-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
 .aday-listesi {  
     list-style-type: none;
     width: 100%;
@@ -217,6 +224,11 @@ button:active {
   background-color: var(--primary-color);
   border-radius: 10px;
   border: 2px solid var(--bg-main);
+}
+.sayac-oran {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .aday { 

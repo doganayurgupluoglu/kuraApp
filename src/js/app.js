@@ -9,6 +9,7 @@ resultBtn.addEventListener("click", showWinner);
 clearBtn.addEventListener("click", clearList);
 
 loadBtns();
+counterAndRate();
 
 
 adayForm.addEventListener("submit", e => {
@@ -26,6 +27,7 @@ adayForm.addEventListener("submit", e => {
     adayListesi.prepend(li);
     adayInput.value = "";
     loadBtns();
+    counterAndRate();
     
 });
 
@@ -77,6 +79,8 @@ function showWinner(e) {
 function clearList(e) {
     e.preventDefault()
     adayListesi.innerHTML = "";
+    counterAndRate();
+    loadBtns();
 }
 function loadBtns(){
     const adaylar = document.querySelectorAll(".aday");
@@ -89,5 +93,18 @@ function loadBtns(){
 function removeAday(e){
     e.target.closest("li").remove();
     loadBtns();
+    counterAndRate();
+}
+function counterAndRate(){
+    const adaylar = document.querySelectorAll(".aday");
+    const sayac = document.querySelector(".sayac");
+    const oran = document.querySelector(".oran");
+
+    sayac.textContent = `Katılımcı Sayısı: ${adaylar.length}`;
+    if(adaylar.length === 0){
+        oran.textContent = "Kazanma Şansı -"
+    }else {
+        oran.textContent = `Kazanma Şansı: %${(100 / adaylar.length).toFixed(2)}`;
+    }
 }
 
