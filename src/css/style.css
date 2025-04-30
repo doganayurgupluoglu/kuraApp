@@ -1,0 +1,320 @@
+/* Değişken Tanımları */
+:root {
+    --madder : rgb(163, 22, 33);
+    --madder-alert : rgba(163, 22, 33, .3);
+    --snow : rgb(252, 247, 248);
+    --french-gray: rgb(206, 211, 220);
+    --air-force-blue: rgb(78, 128, 152);
+    --light-sky-blue: rgb(144, 194, 231);
+    --border-color-1: rgba(78, 128, 152, 0.8);
+    --hover-bg-color: rgba(144, 194, 231, 0.2); /* Hover efekti için renk */
+    --input-focus-border: rgb(78, 128, 152); /* Input focus rengi */
+    --button-hover-bg: rgb(60, 108, 132); /* Buton hover rengi */
+    --add-button-bg: rgb(60, 179, 113); /* Ekle butonu rengi */
+    --add-button-hover-bg: rgb(46, 139, 87); /* Ekle butonu hover rengi */
+
+    --font-sans: 'Montserrat', sans-serif;
+    --font-mono: 'Source Code Pro', monospace;
+    --font-gothic: 'Special Gothic Expanded One', sans-serif;
+}
+
+/* Temel Sayfa Stilleri */
+html {
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--light-sky-blue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333; /* Genel metin rengi */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    box-sizing: border-box;
+}
+
+/* Header Stilleri */
+header {
+    width: 100%;
+    height: 60px;
+    background-color: var(--snow);
+    border-bottom: 1px solid var(--light-sky-blue);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    flex-shrink: 0;
+}
+
+.head {
+    text-align: center;
+    line-height: 60px;
+    letter-spacing: 1px;
+    color: var(--air-force-blue);
+    font-family: var(--font-gothic);
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(144, 194, 231, 0.8);
+    cursor: default; /* Başlık tıklanabilir değilse */
+}
+
+/* Ana İçerik Alanı */
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* Kura Konteyneri */
+.kura-container {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--snow);
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color-1);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    min-height: 500px;
+    gap: 1.5rem;
+}
+
+/* Logo Resmi */
+.kura-img{
+    width: 100%;
+    max-width: 160px; /* Biraz daha küçülttüm */
+}
+
+/* Input ve Liste Alanı */
+.input-output-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+/* Form Stilleri */
+#aday-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column; /* Mobil için alt alta */
+    align-items: stretch; /* Elemanların genişlemesini sağla */
+    gap: 0.8rem; /* Form elemanları arası boşluk */
+}
+
+.aday-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--air-force-blue);
+    text-align: center; /* Mobil için ortalı */
+    margin-bottom: 0.2rem; /* Input'tan biraz ayır */
+}
+
+#aday-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--french-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#aday-input::placeholder {
+    color: var(--french-gray);
+    font-style: italic;
+    font-size: 0.9rem; /* Placeholder fontunu küçülttüm */
+}
+
+#aday-input:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 5px rgba(78, 128, 152, 0.5);
+}
+.alert {
+    color: var(--madder);
+    padding: 3px;
+    border: 1px dashed var(--madder);
+    text-align: center;
+    background-color: var(--madder-alert);
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+
+/* Butonlar için Genel Stil */
+button {
+    padding: 0.7rem 1.2rem; /* Buton boyutunu ayarladım */
+    font-size: 1rem; /* Font boyutunu ayarladım */
+    font-weight: 600;
+    color: var(--snow);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ekle Butonu (.add-btn) */
+.add-btn {
+    background-color: var(--add-button-bg); /* Yeşil tonu */
+}
+
+.add-btn:hover {
+    background-color: var(--add-button-hover-bg);
+}
+.clear-btn {
+    background-color: var(--madder);
+}
+/* Kura Çek Butonu (.result) */
+.result {
+    background-color: var(--air-force-blue); /* Mavi tonu */
+    margin-top: 0.5rem; /* Ekle butonundan biraz ayır */
+}
+
+.result:hover {
+    background-color: var(--button-hover-bg);
+}
+
+
+/* Aday Listesi */
+.aday-listesi {
+    list-style-type: none;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid var(--border-color-1);
+    padding: 0.5rem; /* Padding'i azalttım */
+    border-radius: 3px;
+    min-height: 280px;
+    max-height: 280px; /* Yüksekliği ayarladım */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--air-force-blue) var(--snow);
+    background-color: #fdfdfe;
+
+}
+
+.aday-listesi::-webkit-scrollbar {
+  width: 8px;
+}
+.aday-listesi::-webkit-scrollbar-track {
+  background: var(--snow);
+  border-radius: 10px;
+}
+.aday-listesi::-webkit-scrollbar-thumb {
+  background-color: var(--air-force-blue);
+  border-radius: 10px;
+  border: 2px solid var(--snow);
+}
+
+/* Liste Elemanı (.aday) */
+.aday {
+    font-weight: 500;
+    border-bottom: 1px dashed var(--french-gray);
+    padding: 0.6rem 0.8rem;
+    transition: background-color 0.2s ease;
+    cursor: default;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aday:last-child {
+    border-bottom: none;
+}
+
+.aday:hover {
+    background-color: var(--hover-bg-color);
+}
+
+/* Kazanan Alanı Stilleri */
+.kazanan-container {
+    margin-top: 1rem; /* Üstten boşluk */
+    padding: 1rem 1.5rem;
+    background-color: var(--air-force-blue); /* Ana buton rengiyle uyumlu */
+    color: var(--snow); /* Beyaz metin */
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Form ile benzer genişlik */
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
+    display: none; /* Başlangıçta gizli, JS ile gösterilecek */
+}
+
+.kazanan {
+    font-size: 1.3rem; /* Kazanan yazısını büyüttüm */
+    font-weight: bold;
+    word-wrap: break-word; /* Uzun isimler varsa satır atlasın */
+}
+
+
+/* Medya Sorguları (Responsive Tasarım) */
+@media (min-width: 768px) {
+    .input-output-container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 3rem;
+    }
+
+    form {
+        max-width: 350px;
+        /* Butonları yan yana getirmek için flex kullanabiliriz */
+        /* display: grid; grid-template-columns: 1fr auto; */ /* Alternatif */
+    }
+
+     /* Geniş ekranda form elemanlarını daha iyi hizalamak için: */
+     form {
+        display: grid;
+        grid-template-columns: 1fr auto; /* Input genişlesin, buton sabit */
+        grid-template-areas:
+            "label label"
+            "input button1"
+            "button2 button2"; /* Kura çek butonu alta */
+        align-items: center; /* Dikey hizalama */
+    }
+    .aday-label {
+        grid-area: label;
+        text-align: center; /* Geniş ekranda sola hizalı */
+        margin-bottom: 0; /* Grid gap halleder */
+    }
+    #aday-input {
+        grid-area: input;
+    }
+    .add-btn {
+        grid-area: button1;
+    }
+    .result {
+        grid-area: button2;
+        margin-top: 0; /* Grid gap halleder */
+    }
+
+
+    .aday-listesi {
+        max-width: 350px;
+        max-height: 350px;
+    }
+
+    .kazanan-container {
+         max-width: 500px; /* Geniş ekranda biraz daha geniş olabilir */
+    }
+}

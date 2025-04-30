@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kullanıcıların isim ekleyerek aralarından rastgele kura çekebileceği, dinamik ve etkileşimli bir JavaScript kura uygulaması. İleride görsel çark animasyonlarıyla geliştirilebilir." />
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts (Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+
+    <title>Kura Uygulamas</title>
+</head>
+<body>
+
+    <header>
+        <h1 class="head">DoganayLab</h1>
+    </header>
+    <main>
+        <div class="kura-container">
+            <img class="kura-img" src="/src/img/Kura.png" alt="Kura Çek Logo resmi">
+            <div class="input-output-container">
+                <form id="aday-form">
+                    <label for="aday-input" class="aday-label">İsimleri giriniz <br></label>
+                    <input type="text" id="aday-input" placeholder="İsimleri girdikten sonra enter'a basınız veya ekle bununa tıklayınız">
+                    <p class="alert">Boş bırakılamaz</p>
+                    <button type="submit" class="add-btn">Ekle</button>
+                    <button class="result">Kurayı çek ve sonucu görüntüle !</button>
+                    <button class="clear-btn">Temizle ve yeniden başla</button>
+                </form>
+                <ul class="aday-listesi">
+                </ul>
+            </div>
+            <div class="kazanan-container">
+                <!-- <p class="kazanan">Kazanan İsim Doğanay!</p> -->
+            </div>
+        </div>
+    </main>
+    <script src="/src/js/app.js" defer></script>
+</body>
+</html>
