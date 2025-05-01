@@ -16,8 +16,10 @@ Bu dosya, Javascript pratiği için geliştirilen kura uygulamasının mevcut ve
 - [x] Farklı ekran boyutlarına uyumlu (responsive) tasarım.
 - [x] Açık renk tema.
 - [x] Kazananı listeden silme butonu.
+- [x] Kazanan için animasyonlar.
+- [x] Sesli geribildirim.
+- [x] Kura geçmişi.
 
 ## Gelecekte Eklenecek Özellikler
 
-- [ ] Kura çekildiğinde kazanma sesi.
-- [ ] Kazanan için animasyonlar.
+- [ ] Çoklu kura
