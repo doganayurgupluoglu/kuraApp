@@ -14,27 +14,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
 
-    <title>Kura Uygulaması - Açık Tema</title>
+    <title>Rastgele | Online Kura | Çekiliş |</title>
 </head>
 <body>
 
     <header>
-        <h1 class="head">DoganayLab</h1>
+        <a class="head" href="#">Rastgele.fun</a>
     </header>
     <main>
         <div class="kura-container">
-            <img class="kura-img" src="/src/img/Kura.png" alt="Kura Çek Logo resmi">
+            <!-- <img class="kura-img" src="/src/img/Kura.png" alt="Kura Çek Logo resmi"> -->
             <h1>Kura çekme uygulaması</h1>
             <div class="input-output-container">
                 <form id="aday-form">
                     <label for="aday-input" class="aday-label">Katılımcı İsimlerini Girin</label>
-                    <input type="text" id="aday-input" placeholder="İsim ekleyip Enter'a basın veya Ekle'ye tıklayın">
-                    <p class="alert">Lütfen bir isim giriniz.</p>
-                    <div class="clear-add-btns">
-                        <button type="submit" class="add-btn">Ekle</button>
-                        <button class="clear-btn">Listeyi Temizle</button>
+                    <div class="input-wrapper">
+                        <input type="text" id="aday-input" placeholder="İsim girip enter'a basın" required>
+                        <button type="submit" class="add-btn"><i class="fa-solid fa-plus"></i></button>
                     </div>
-                    <button class="result">Kurayı Çek</button>
+                    <div class="clear-add-btns">
+                        <button class="result"><i class="fa-solid fa-shuffle"></i> Kurayı Çek</button>
+                        <button class="clear-btn"><i class="fa-regular fa-trash-can"></i> Listeyi Temizle</button>
+                    </div>
+                    <div class="kazanan-container">
+                    </div>
                 </form>
                 <div class="aday-info-container">
                     <div class="sayac-oran">
@@ -44,11 +47,55 @@
                     <ul class="aday-listesi">
                     </ul>
                 </div>
-            </div>
-            <div class="kazanan-container">
+                <div class="history-container">
+                    <p>Kura geçmişi</p>
+                    <ul class="winner-history">
+                    </ul>
                 </div>
+            </div>
         </div>
+        
+        <article class="kura-icerik">
+
+            <h2><strong>Kura Çekmenin Eğlenceli Tarihi ve Rastgele Seçimin Felsefesi</strong></h2>
+          
+            <section>
+              <h3><strong>🏛️ Antik Çağlarda Kura Çekmek: "Tanrım, Lütfen Ben Değil!"</strong></h3>
+              <p>
+                İnsanlık, sorumluluğu başkasına atma konusunda her zaman yaratıcıydı. İlk çağlarda kimlerin zor işleri üstleneceği, tanrılara veya şansa bırakılırdı. Minik taşlar, çubuklar ya da <strong>kısa çöp çekme geleneği</strong>, belki de "ben seçmedim, kader seçti" demenin ilk şekliydi. İşte antik çağların meşhur <strong>rastgele seçim</strong> taktikleri!
+              </p>
+            </section>
+          
+            <section>
+              <h3><strong>⚔️ Orta Çağ ve Kura Maceraları: Şövalyeler, Kemikler ve Kısa Çöpler</strong></h3>
+              <p>
+                Orta Çağ'da kura çekme biraz daha ilginç hale geldi. Şövalyeler, savaş sıralarını belirlemek için tavuk kemiklerinden yardım alıyor olabilir miydi? Ya da belki <strong>şans oyunları</strong>, ejderhalarla dövüşten önce kimin önden gideceğine karar vermek için kullanıldı? İşte tarih boyunca <strong>adil seçim</strong> arayışının en ilginç yöntemleri!
+              </p>
+            </section>
+          
+            <section>
+              <h3><strong>💻 Modern Çağda Kura: Online Çekiliş ve Dijital Şans Oyunları</strong></h3>
+              <p>
+                Bugün hayatımızda ejderhalar yok, ama iş arkadaşları var! Yılbaşı hediye çekilişleri, görev paylaşımları veya basit arkadaş gruplarında bile <strong>online kura</strong> yöntemleri kullanıyoruz. <strong>İsim seçici araçlar</strong> ve dijital çekiliş yöntemleri sayesinde artık <strong>adil seçim</strong> sadece bir tık ötede. "<strong>Kısa çöp</strong>" çekmek artık dijital ve daha az acı verici!
+              </p>
+            </section>
+          
+            <section>
+              <h3><strong>🎯 Kura Çekmenin Felsefesi: Rastgeleliğin Dayanılmaz Hafifliği</strong></h3>
+              <p>
+                Kura çekmek, hayatın belirsizliklerine karşı koymanın hem eğlenceli hem de stresli bir yolu. Karar veremediğiniz anlarda şansı devreye sokmak, herkese eşit şans tanımanın en demokratik yoludur. İşte dijital <strong>kura uygulamaları</strong> da bu felsefeyi sürdürüyor; kağıtları katlamadan, tek tıkla adil sonuçlar elde edin!
+              </p>
+            </section>
+          
+            <p class="sonuc">
+              🥳 <strong>Sonuç:</strong> "Kazanırsan kader, kaybedersen kod bozuk." Bol şans!
+            </p>
+          
+          </article>
+          
     </main>
+    <audio id="winner-sound" src="/src/sounds/winner.wav">winner sound</audio>
+    <audio id="delete-sound" src="/src/sounds/delete.wav">delete sound</audio>
     <script src="/src/js/app.js" defer></script>
 </body>
 </html>
